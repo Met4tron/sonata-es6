@@ -1,46 +1,184 @@
-# Black
-
-### A GitPitch Presentation Template
-
----
-
-## Tips!
+# Palesterick
 
 <br>
-
-@fa[arrows gp-tip](Press F to go Fullscreen)
-
-@fa[microphone gp-tip](Press S for Speaker Notes)
+### Yuri Gomes
 
 ---
 
-## Template Features
+## O Que é ES6?
 
 ---
+@title[Novas Funcionalidades]
+## Novas Funcionalidades
 
-@title[JavaScript Block]
+- Let
+- Const
+- Arrow Functions
+- Template Literals
+- Destructuring Assignment
+- Default Arguments
+- Named Parameters
+- Rest e Spread
+- Classes
+- Async/Await
+- Arrays
+- Loops
+- Symbols
+- Set e WeakSet
+- Map e WeakMap
+- Generators
+- Typescript
+- Transpiladores
+
+
+--- 
+@title[Let]
+
+<p><span class="slide-title">Let</span></p>
+
+```javascript
+    function soma () {
+        let a = 1;
+        if (a) {
+            let b = 1;
+        }
+        console.log(b); // Error, pois o let está fora do escopo
+    } 
+```
+--- 
+@title[Const]
+
+<p><span class="slide-title">Const</span></p>
+
+```javascript
+    const a = 1;
+    a = 2; // Error, const necessita de ser declarada com um valor
+```
+--- 
+@title[Arrow Functions]
+
+<p><span class="slide-title">Arrow Functions</span></p>
+
+```javascript
+
+```
+--- 
+@title[Template String]
+
+<p><span class="slide-title">Template String</span></p>
+
+```javascript
+```
+--- 
+@title[Destructuring Assignment]
+
+<p><span class="slide-title">Destructuring Assignment</span></p>
+
+```javascript
+```
+--- 
+@title[Default Arguments]
+
+<p><span class="slide-title">Default Arguments</span></p>
+
+```javascript
+```
+--- 
+@title[Named Parameters]
+
+<p><span class="slide-title">Named Parameters</span></p>
+
+```javascript
+```
+--- 
+@title[Rest]
+
+<p><span class="slide-title">Rest</span></p>
+
+```javascript
+```
+--- 
+@title[Spread]
+
+<p><span class="slide-title">Spread</span></p>
+
+```javascript
+```
+--- 
+@title[Classes]
+
+<p><span class="slide-title">Async/Await</span></p>
+
+```javascript
+```
+--- 
+@title[Arrays]
+
+<p><span class="slide-title">Arrays</span></p>
+
+```javascript
+```
+--- 
+@title[Loops]
+
+<p><span class="slide-title">Loops</span></p>
+
+```javascript
+```
+--- 
+@title[Symbols]
+
+<p><span class="slide-title">Symbols</span></p>
+
+```javascript
+```
+--- 
+@title[Set]
 
 <p><span class="slide-title">JavaScript Block</span></p>
 
 ```javascript
-// Include http module.
-var http = require("http");
+```
+--- 
+@title[WeakSet]
 
-// Create the server. Function passed as parameter
-// is called on every request made.
-http.createServer(function (request, response) {
-  // Attach listener on end event.  This event is
-  // called when client sent, awaiting response.
-  request.on("end", function () {
-    // Write headers to the response.
-    // HTTP 200 status, Content-Type text/plain.
-    response.writeHead(200, {
-      'Content-Type': 'text/plain'
-    });
-    // Send data and end response.
-    response.end('Hello HTTP!');
-  });
+<p><span class="slide-title">JavaScript Block</span></p>
 
-// Listen on the 8080 port.
-}).listen(8080);
+```javascript
+```
+--- 
+@title[Map]
+
+<p><span class="slide-title">JavaScript Block</span></p>
+
+```javascript
+```
+--- 
+@title[WeakMap]
+
+<p><span class="slide-title">JavaScript Block</span></p>
+
+```javascript
+```
+--- 
+@title[Generators]
+
+<p><span class="slide-title">JavaScript Block</span></p>
+
+```javascript
+```
+--- 
+@title[Typescript]
+
+<p><span class="slide-title">JavaScript Block</span></p>
+
+```javascript
+```
+---
+
+@title[Transpiladores]
+
+<p><span class="slide-title">JavaScript Block</span></p>
+
+```javascript
 ```
