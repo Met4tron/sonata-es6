@@ -1,15 +1,16 @@
 # Palesterick
-
 <br>
-### Yuri Gomes
+![firstGif](https://media.giphy.com/media/WiM5K1e9MtEic/giphy.gif)
+<br>
+#### Yuri Gomes
 
 ---
 
 ## O Que é ES6?
+<br>
+![](https://media.giphy.com/media/l1J9DGe9KBzJOq5Nu/giphy.gif)
 
 ---
-
-@title[Novas Funcionalidades]
 
 ## Novas Funcionalidades
 
@@ -304,3 +305,9 @@ sayings.size; // 0
 
 ```javascript
 ```
+
+___
+
+## Obrigado
+
+![](https://media.giphy.com/media/mQG644PY8O7rG/giphy.gif)
