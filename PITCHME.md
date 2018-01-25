@@ -312,6 +312,8 @@ class Carro {
 
 <p><span class="slide-title">Arrays</span></p>
 
+![Stranger](https://media.giphy.com/media/3o7qiZd2ORhXiqoEDe/source.gif)
+
 ---
 
 <p><span class="slide-title">Array.From()</span></p>
@@ -464,7 +466,9 @@ O TypeScript é um superset do JavaScript que fornece principalmente tipagem est
 
 ---
 
-![Babel 2](./assets/bbel.png)   
+![Babel 2](./assets/bbel.png)
+
+--- 
 
 <p><span class="slide-title">Coisas que tem, mas nem sei bixo</span></p>
 
