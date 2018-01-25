@@ -21,17 +21,21 @@
 @title[Let]
 
 <p><span class="slide-title">Let</span></p>
-<br>
-Declara uma variável local de escopo do bloco, opcionalmente inicializando-a com um valor.
 
 ```javascript
 //ES5
+var y = 5
 if (true) {
-  var x = 5;
+  var x = 5 + y;
 }
 
-console.log(x); //5
+console.log(x); //10
+```
+---
 
+<p><span class="slide-title">Let</span></p>
+
+```javascript
 //ES6
 if (true) {
   let y = 5;
@@ -48,19 +52,15 @@ console.log(y); // ReferenceError: y não está definido
 Declara uma constante apenas de leitura.
 
 ```javascript
-// Isto irá causar um  erro
-function f() {}
-const f = 5;
+//ES5
+const a = 1;
+a = 2; // Error
 
-// Isto também irá causar um erro.
-function f() {
-  const g = 5;
-  var g;
 
-  //declarações
-}
 ```
-
+Note:
+É um tipo de variavel de somente leitura, não pode ser reatribuida
+Declarar o valor, quando instanciar a variavel
 ---
 
 @title[Arrow Functions]
@@ -71,6 +71,9 @@ function f() {
 var arr = [1, 2, 3];
 var squares = arr.map(function (x) { return x * x });
 ```
+
+Note:
+Sintaxe da es5, muita mais verbosa
 ---
 
 <p><span class="slide-title">Arrow Functions</span></p>
@@ -80,6 +83,11 @@ const arr = [1, 2, 3];
 const squares = arr.map(x => x * x);
 
 ```
+
+Note:
+Nova sintaxe
+Quando é somente um parametro, não é necessário usar as chaves
+Também pode ser omitido a palavra return, caso seja somente uma instrução
 ---
 
 <p><span class="slide-title">Arrow Functions</span></p>
@@ -93,11 +101,15 @@ function UiComponent() {
         _this.handleClick(); // (B)
     });
 }
+
 UiComponent.prototype.handleClick = function () {
     ···
 };
 
 ```
+
+Note:
+Explicar o hoisting
 ---
 
 <p><span class="slide-title">Arrow Functions</span></p>
@@ -113,6 +125,10 @@ function UiComponent() {
 }
 
 ```
+
+Note:
+Explicar que mantém o this do escopo de onde foi invocado
+Não precisa do bind
 ---
 
 @title[Template String]
@@ -124,8 +140,7 @@ function UiComponent() {
 var a = 5;
 var b = 10;
 console.log("Quinze é " + (a + b) + " e\nnão " + (2 * a + b) + ".");
-// "Quinze é 15 e
-// não 20."
+// "Quinze é 15 e não 20."
 ```
 ---
 
@@ -139,7 +154,8 @@ console.log(`Quinze é ${a + b} e\nnão ${2 * a + b}.`);
 // "Quinze é 15 e
 // não 20."
 ```
-
+Note:
+Variaveis são inputadas através das ${}
 ---
 
 @title[Destructuring Assignment]
@@ -215,13 +231,6 @@ function selectEntries({ start = 0, end = -1, step = 1 } = {}) {}
 
 ---
 
-<p><span class="slide-title">Named Parameters</span></p>
-
-```javascript
-```
-
----
-
 @title[Rest]
 
 <p><span class="slide-title">Rest</span></p>
@@ -258,7 +267,7 @@ var obj = {
     },
     bar: function () {
         this.foo();
-    }, // trailing comma is legal in ES5
+    }, // trailing comma é legal em es5
 }
 ```
 ---
@@ -277,7 +286,7 @@ const obj = {
 
 @title[Classes]
 
-<p><span class="slide-title">Async/Await</span></p>
+<p><span class="slide-title">Classes</span></p>
 
 ```javascript
 class Carro {
@@ -299,6 +308,28 @@ class Carro {
 
 <p><span class="slide-title">Arrays</span></p>
 
+---
+
+<p><span class="slide-title">Array.From()</span></p>
+
+Array.from(arrayLike[, mapFn[, thisArg]])
+
+```javascript
+
+function f() {
+  return Array.from(arguments);
+}
+
+f(1, 2, 3); 
+// [1, 2, 3]
+
+Array.from([1, 2, 3], x => x + x);      
+// [2, 4, 6]
+
+```
+
+---
+
 ```javascript
 //for..of
 const arr = ['a', 'b', 'c'];
@@ -308,7 +339,9 @@ for (const elem of arr) {
 ```
 ---
 
-<p><span class="slide-title">Arrays</span></p>
+<p><span class="slide-title">Array.Fill()</span></p>
+
+.fill(value[, start = 0[, end = this.length]])
 
 ```javascript
 //Array.fill()
@@ -316,6 +349,40 @@ let arr = [1, 2, 3, 4, 5];
 arr.fill(2); // [2, 2, 2, 2, 2]
 ```
 
+---
+
+<p><span class="slide-title">Array.of()</span></p>
+
+Array.of(element0[, element1[, ...[, elementN]]])
+
+```javascript
+Array.of(1);         // [1]
+Array.of(1, 2, 3);   // [1, 2, 3]
+Array.of(undefined); // [undefined]
+```
+Note:
+O método Array.of() cria um nova instância do Array com um número variável de argumentos, independentemente do número ou do tipo dos argumentos.
+
+---
+
+<p><span class="slide-title">Array.entries()</span></p>
+
+```javascript
+const numbers = [1, 2, 3]; 
+const val = numbers.entries(); 
+console.log(val.next().value); // [0, 1]  
+console.log(val.next().value); // [1, 2]
+console.log(val.next().value); // [2, 3]
+```
+---
+
+<p><span class="slide-title">Array.findIndex()</span></p>
+
+```javascript
+const numbers = [1, 2, 3]; 
+const oddNumber = numbers.findIndex((x) => x % 2 == 1); 
+console.log(oddNumber); // 0 
+```
 ---
 
 @title[Symbols]
@@ -390,8 +457,9 @@ sayings.size; // 0
 
 <p><span class="slide-title">Typescript</span></p>
 
-```javascript
-```
+O TypeScript é um superset do JavaScript que fornece principalmente tipagem estática opcional, classes e interfaces. Um dos grandes benefícios é permitir que IDEs forneçam um ambiente mais rico para detectar erros comuns à medida que escrevemos nosso código
+
+![Typescript](./assets/type.png)
 
 ---
 
@@ -399,10 +467,14 @@ sayings.size; // 0
 
 <p><span class="slide-title">Transpiladores</span></p>
 
-```javascript
-```
+![Babel](./assets/babel.png)
 
 ---
+
+<p><span class="slide-title">Transpiladores</span></p>
+
+![Babel 2](./assets/bbel.png)
+
 
 @title[Obrigado]
 
