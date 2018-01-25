@@ -256,6 +256,8 @@ console.log([...arr1, ...arr2, ...arr3]);
 // [ 'a', 'b', 'c', 'd', 'e' ]
 ```
 
+---
+
 @title[Object Literals]
 
 <p><span class="slide-title">Object Literals</span></p>
@@ -271,6 +273,8 @@ var obj = {
 }
 ```
 ---
+
+<p><span class="slide-title">Object Literals</span></p>
 
 ```javascript
 const obj = {
@@ -330,6 +334,8 @@ Array.from([1, 2, 3], x => x + x);
 
 ---
 
+<p><span class="slide-title">for..of</span></p>
+
 ```javascript
 //for..of
 const arr = ['a', 'b', 'c'];
@@ -385,15 +391,6 @@ console.log(oddNumber); // 0
 ```
 ---
 
-@title[Symbols]
-
-<p><span class="slide-title">Symbols</span></p>
-
-```javascript
-```
-
----
-
 @title[Set]
 
 <p><span class="slide-title">Set</span></p>
@@ -444,22 +441,14 @@ sayings.size; // 0
 
 ---
 
-@title[Generators]
-
-<p><span class="slide-title">Generators</span></p>
-
-```javascript
-```
-
----
-
 @title[Typescript]
 
 <p><span class="slide-title">Typescript</span></p>
 
-O TypeScript é um superset do JavaScript que fornece principalmente tipagem estática opcional, classes e interfaces. Um dos grandes benefícios é permitir que IDEs forneçam um ambiente mais rico para detectar erros comuns à medida que escrevemos nosso código
-
 ![Typescript](./assets/type.png)
+
+Note:
+O TypeScript é um superset do JavaScript que fornece principalmente tipagem estática opcional, classes e interfaces. Um dos grandes benefícios é permitir que IDEs forneçam um ambiente mais rico para detectar erros comuns à medida que escrevemos nosso código
 
 ---
 
@@ -473,8 +462,19 @@ O TypeScript é um superset do JavaScript que fornece principalmente tipagem est
 
 <p><span class="slide-title">Transpiladores</span></p>
 
-![Babel 2](./assets/bbel.png)
+---
 
+![Babel 2](./assets/bbel.png)   
+
+<p><span class="slide-title">Coisas que tem, mas nem sei bixo</span></p>
+
+- Generators e Interators
+- Weak Map e Weak Set
+- Meta Programação (Proxys e Reflect API)
+- Flow (Static Type Check)
+- ESNEXT(ES7, ES8...)
+
+---
 
 @title[Obrigado]
 
