@@ -1,4 +1,5 @@
 # Palesterick
+
 <br>
 ![firstGif](https://media.giphy.com/media/WiM5K1e9MtEic/giphy.gif)
 <br>
@@ -7,6 +8,7 @@
 ---
 
 ## O Que é ES6?
+
 <br>
 ![](https://media.giphy.com/media/l1J9DGe9KBzJOq5Nu/giphy.gif)
 
@@ -66,27 +68,51 @@ function f() {
 <p><span class="slide-title">Arrow Functions</span></p>
 
 ```javascript
-var a = ["Hydrogen", "Helium", "Lithium", "Beryl­lium"];
+var arr = [1, 2, 3];
+var squares = arr.map(function (x) { return x * x });
+```
+---
 
-var a2 = a.map(function(s) {
-  return s.length;
-});
+<p><span class="slide-title">Arrow Functions</span></p>
 
-var a3 = a.map(s => s.length);
+```javascript
+const arr = [1, 2, 3];
+const squares = arr.map(x => x * x);
 
-// This Léxico
+```
+---
 
-function Pessoa() {
-  this.idade = 0;
+<p><span class="slide-title">Arrow Functions</span></p>
 
-  setInterval(() => {
-    this.idade++; // propriedade |this|refere ao objeto pessoa
-  }, 1000);
+```javascript
+function UiComponent() {
+    var _this = this; // (A)
+    var button = document.getElementById('myButton');
+    button.addEventListener('click', function () {
+        console.log('CLICK');
+        _this.handleClick(); // (B)
+    });
+}
+UiComponent.prototype.handleClick = function () {
+    ···
+};
+
+```
+---
+
+<p><span class="slide-title">Arrow Functions</span></p>
+
+```javascript
+
+function UiComponent() {
+    var button = document.getElementById('myButton');
+    button.addEventListener('click', () => {
+        console.log('CLICK');
+        this.handleClick(); // (A)
+    });
 }
 
-var p = new Pessoa();
 ```
-
 ---
 
 @title[Template String]
@@ -100,12 +126,17 @@ var b = 10;
 console.log("Quinze é " + (a + b) + " e\nnão " + (2 * a + b) + ".");
 // "Quinze é 15 e
 // não 20."
+```
+---
 
+<p><span class="slide-title">Template String</span></p>
+
+```javascript
 //ES6
 var a = 5;
 var b = 10;
 console.log(`Quinze é ${a + b} e\nnão ${2 * a + b}.`);
-// "Quinze é 15 e 
+// "Quinze é 15 e
 // não 20."
 ```
 
@@ -116,26 +147,29 @@ console.log(`Quinze é ${a + b} e\nnão ${2 * a + b}.`);
 <p><span class="slide-title">Destructuring Assignment</span></p>
 
 ```javascript
+const atributosPersonagem = {
+  forca: 20,
+  mentalidade: 40,
+  resistencia: 10
+};
+
+let { forca, mentalidade } = atributosPersonagem;
+console.log(forca);//20
+console.log(mentalidade);//40
 ```
 
 ---
 
 @title[Default Arguments]
 
-<p><span class="slide-title">Default Arguments</span></p>
+<p><span class="slide-title">Default Parameters</span></p>
 
 ```javascript
-//ES5   
+//ES5
 function multiplicar(a, b) {
-  b = typeof b !== 'undefined' ?  b : 1;
+  b = typeof b !== "undefined" ? b : 1;
 
-  return a*b;
-}
-//ES6
-multiplicar(5); // 5
-
-function multiplicar(a, b = 1) {
-  return a*b;
+  return a * b;
 }
 
 multiplicar(5); // 5
@@ -143,7 +177,43 @@ multiplicar(5); // 5
 
 ---
 
+<p><span class="slide-title">Default Parameters </span></p>
+
+```javascript
+// ES6
+function multiplicar(a = 10, b = 1) {
+  return a * b;
+}
+multiplicar()//10
+multiplicar(5); // 5
+```
+
+---
+
 @title[Named Parameters]
+
+<p><span class="slide-title">Named Parameters</span></p>
+
+```javascript
+//ES5
+
+function selectEntries(options) {
+  options = options || {};
+  var start = options.start || 0;
+  var end = options.end || -1;
+  var step = options.step || 1;
+}
+```
+
+---
+
+<p><span class="slide-title">Named Parameters</span></p>
+
+```javascript
+function selectEntries({ start = 0, end = -1, step = 1 } = {}) {}
+```
+
+---
 
 <p><span class="slide-title">Named Parameters</span></p>
 
@@ -157,23 +227,52 @@ multiplicar(5); // 5
 <p><span class="slide-title">Rest</span></p>
 
 ```javascript
-function multiplicar(multiplicador, ...args) {
-  return args.map(x => multiplicador * x);
-}
+var arr1 = ["a", "b"];
+var arr2 = ["c"];
+var arr3 = ["d", "e"];
 
-var arr = multiplicar(2, 1, 2, 3);
-console.log(arr); // [2, 4, 6]
+console.log(arr1.concat(arr2, arr3)); // [ 'a', 'b', 'c', 'd', 'e' ]
 ```
 
 ---
 
-@title[Spread]
-
-<p><span class="slide-title">Spread</span></p>
+<p><span class="slide-title">Rest</span></p>
 
 ```javascript
+const arr1 = ["a", "b"];
+const arr2 = ["c"];
+const arr3 = ["d", "e"];
+
+console.log([...arr1, ...arr2, ...arr3]);
+// [ 'a', 'b', 'c', 'd', 'e' ]
 ```
 
+@title[Object Literals]
+
+<p><span class="slide-title">Object Literals</span></p>
+
+```javascript
+var obj = {
+    foo: function () {
+        ···
+    },
+    bar: function () {
+        this.foo();
+    }, // trailing comma is legal in ES5
+}
+```
+---
+
+```javascript
+const obj = {
+    foo() {
+        ···
+    },
+    bar() {
+        this.foo();
+    },
+}
+```
 ---
 
 @title[Classes]
@@ -181,6 +280,17 @@ console.log(arr); // [2, 4, 6]
 <p><span class="slide-title">Async/Await</span></p>
 
 ```javascript
+class Carro {
+  constructor() {
+    this.cor = "Vermelho";
+    this.marca = "Volkswagen";
+    this.ano = "2018";
+  }
+
+  marca() {
+    return console.log(`A marca do carro é ${this.marca}`);
+  }
+}
 ```
 
 ---
@@ -190,18 +300,20 @@ console.log(arr); // [2, 4, 6]
 <p><span class="slide-title">Arrays</span></p>
 
 ```javascript
-for (let i of arr) {
-   console.log(i); // logs "3", "5", "7"
+//for..of
+const arr = ['a', 'b', 'c'];
+for (const elem of arr) {
+    console.log(elem);// a , b , c
 }
 ```
-
 ---
 
-@title[Loops]
-
-<p><span class="slide-title">Loops</span></p>
+<p><span class="slide-title">Arrays</span></p>
 
 ```javascript
+//Array.fill()
+let arr = [1, 2, 3, 4, 5];
+arr.fill(2); // [2, 2, 2, 2, 2]
 ```
 
 ---
@@ -236,15 +348,6 @@ for (let item of mySet) console.log(item);
 
 ---
 
-@title[WeakSet]
-
-<p><span class="slide-title">WeakSet</span></p>
-
-```javascript
-```
-
----
-
 @title[Map]
 
 <p><span class="slide-title">Map</span></p>
@@ -259,24 +362,17 @@ sayings.get("fox"); // undefined
 sayings.has("bird"); // false
 sayings.delete("dog");
 sayings.has("dog"); // false
+sayings.get("cat"); // meow
+sayings.get("elephant"); //toot
 
 for (var [key, value] of sayings) {
   console.log(key + " goes " + value);
-}
+};
 // "cat goes meow"
 // "elephant goes toot"
 
 sayings.clear();
 sayings.size; // 0
-```
-
----
-
-@title[WeakMap]
-
-<p><span class="slide-title">WeakMap</span></p>
-
-```javascript
 ```
 
 ---
@@ -306,7 +402,9 @@ sayings.size; // 0
 ```javascript
 ```
 
-___
+---
+
+@title[Obrigado]
 
 ## Obrigado
 
